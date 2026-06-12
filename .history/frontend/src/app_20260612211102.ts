@@ -5,10 +5,10 @@ const app: Application = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.get('/', (req: Request, res: Response) => {
-//   res.send('Hello, World!');
-// }
-// );
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello, World!');
+}
+);
 
 
 app.get('/', async (req: Request, res: Response) => {
@@ -18,11 +18,7 @@ app.get('/', async (req: Request, res: Response) => {
             description: 'A computer motherboard'
         }
     })
-    res.status(201).json({
-        success: true,
-        message: 'Category created successfully',
-        data: category
-    })
+    res.status(201).
 })
 
 export default app;
