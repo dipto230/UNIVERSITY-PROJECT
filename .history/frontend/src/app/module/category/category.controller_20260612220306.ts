@@ -1,0 +1,8 @@
+import { Request, Response } from "express";
+import { CategoryService } from "./category.service";
+
+
+const createCategory = async (req: Request, res: Response) => {
+    const payload = req.body
+    const result = await CategoryService
+}

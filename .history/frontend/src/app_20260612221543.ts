@@ -9,10 +9,10 @@ app.use(express.json());
 
 app.use("/api/v1", IndexRoutes)
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, World!');
-}
-);
+// app.get('/', (req: Request, res: Response) => {
+//   res.send('Hello, World!');
+// }
+// );
 
 
 // app.get('/', async (req: Request, res: Response) => {
