@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {  Request, Response } from "express";
+import { NextFunction, Request, RequestHandler, Response } from "express";
 import { CategoryService } from "./category.service";
-import { catchAsync } from "../../shared/catchAsync";
 
 
 const createCategory = async (req: Request, res: Response) => {
@@ -24,13 +23,58 @@ const createCategory = async (req: Request, res: Response) => {
 }
 
 
+const catchAsync = (fn: RequestHandler) => {
+    return async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            await fn(req, res, next);
+        } catch (error: any) {
+            console.log(error);
+            res.status(500).json({
+                success: false,
+                message: 'Failed to fetch',
+                error: error.message
+            })
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const getAllCategories = catchAsync(
     async (req: Request, res: Response) => {
         const result = await CategoryService.getAllCategories()
         res.status(200).json({
             success: true,
-            message: 'Categories fetched successfully',
-            data: result
         })
     }
 )

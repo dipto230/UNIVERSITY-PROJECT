@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {  Request, Response } from "express";
+import { NextFunction, Request, RequestHandler, Response } from "express";
 import { CategoryService } from "./category.service";
 import { catchAsync } from "../../shared/catchAsync";
 
