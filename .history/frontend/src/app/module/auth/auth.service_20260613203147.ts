@@ -1,4 +1,4 @@
-import { Role } from "../../../generated/prisma/client";
+import { Role, User } from "../../../generated/prisma/client";
 import { auth } from "../../lib/auth";
 
 interface IRegisterUserPayload{
@@ -20,9 +20,4 @@ const registerUser = async (payload: IRegisterUserPayload) => {
     if (!data.user) {
         throw new Error("User registration failed");
     }
-    return data
-}
-
-export const AuthService = {
-    registerUser
 }

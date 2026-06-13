@@ -9,13 +9,7 @@ const registerUser = catchAsync(
         const result = await AuthService.registerUser(payload);
         sendResponse(res, {
             httpStatusCode: 201,
-            success: true,
-            message: "User Register Successfully",
-            data:result
+            success
         })
     }
 )
-
-export const AuthController = {
-    registerUser
-}

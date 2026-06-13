@@ -11,11 +11,7 @@ const registerUser = catchAsync(
             httpStatusCode: 201,
             success: true,
             message: "User Register Successfully",
-            data:result
+            data:res
         })
     }
 )
-
-export const AuthController = {
-    registerUser
-}

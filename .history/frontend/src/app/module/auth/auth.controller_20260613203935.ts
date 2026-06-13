@@ -17,5 +17,5 @@ const registerUser = catchAsync(
 )
 
 export const AuthController = {
-    registerUser
+    
 }

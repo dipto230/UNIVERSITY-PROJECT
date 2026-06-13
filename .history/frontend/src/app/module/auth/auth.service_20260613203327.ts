@@ -24,5 +24,5 @@ const registerUser = async (payload: IRegisterUserPayload) => {
 }
 
 export const AuthService = {
-    registerUser
+    
 }
