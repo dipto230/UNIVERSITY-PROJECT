@@ -56,7 +56,7 @@ const deleteCategory = async (req: Request, res: Response) => {
          console.log(error)
         res.status(500).json({
             success: false,
-            message: 'Failed to delete category',
+            message: 'Failed to retrieve categories',
             error: error.message
       }) 
     }
@@ -65,6 +65,5 @@ const deleteCategory = async (req: Request, res: Response) => {
 
 export const CategoryController = {
     createCategory,
-    getAllCategories,
-    deleteCategory
+    getAllCategories
 }

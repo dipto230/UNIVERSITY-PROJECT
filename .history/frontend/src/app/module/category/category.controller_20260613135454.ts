@@ -65,6 +65,5 @@ const deleteCategory = async (req: Request, res: Response) => {
 
 export const CategoryController = {
     createCategory,
-    getAllCategories,
-    deleteCategory
+    getAllCategories
 }

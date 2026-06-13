@@ -48,15 +48,13 @@ const deleteCategory = async (req: Request, res: Response) => {
         const { id } = req.params;
         const result = await CategoryService.deleteCategory(id);
         res.status(200).json({
-            success: true,
-            message: 'Category deleted successfully',
-            data: result
+            
         })
     } catch (error: any) {
          console.log(error)
         res.status(500).json({
             success: false,
-            message: 'Failed to delete category',
+            message: 'Failed to retrieve categories',
             error: error.message
       }) 
     }
@@ -65,6 +63,5 @@ const deleteCategory = async (req: Request, res: Response) => {
 
 export const CategoryController = {
     createCategory,
-    getAllCategories,
-    deleteCategory
+    getAllCategories
 }

@@ -25,46 +25,20 @@ const createCategory = async (req: Request, res: Response) => {
 
 const getAllCategories = async (req: Request, res: Response) => {
     try {
-        const categories = await CategoryService.getAllCategories()
-        res.status(200).json({
-            success: true,
-            message: 'Categories retrieved successfully',
-            data: categories
-        })
+        const cat
                 
             } catch (error: any) {
         console.log(error)
         res.status(500).json({
             success: false,
-            message: 'Failed to retrieve categories',
+            message: 'Failed to create category',
             error: error.message
       }) 
     }
 }
 
-
-const deleteCategory = async (req: Request, res: Response) => {
-    try {
-        const { id } = req.params;
-        const result = await CategoryService.deleteCategory(id);
-        res.status(200).json({
-            success: true,
-            message: 'Category deleted successfully',
-            data: result
-        })
-    } catch (error: any) {
-         console.log(error)
-        res.status(500).json({
-            success: false,
-            message: 'Failed to delete category',
-            error: error.message
-      }) 
-    }
-}
 
 
 export const CategoryController = {
-    createCategory,
-    getAllCategories,
-    deleteCategory
+    createCategory
 }
