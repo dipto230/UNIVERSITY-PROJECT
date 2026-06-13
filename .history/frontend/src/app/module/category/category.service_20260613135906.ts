@@ -20,15 +20,10 @@ const getAllCategories = async(): Promise<Category[]> => {
 
 const deleteCategory = async (id: string): Promise<Category> => {
     const category = await prisma.category.delete({
-        where: {id}
-    })
-    return category
-}
+        where: {    id}
 
 
 
 export const CategoryService = {
-    createCategory,
-    getAllCategories,
-    deleteCategory
+    createCategory
 }

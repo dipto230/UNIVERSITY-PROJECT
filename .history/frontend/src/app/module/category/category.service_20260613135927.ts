@@ -28,7 +28,5 @@ const deleteCategory = async (id: string): Promise<Category> => {
 
 
 export const CategoryService = {
-    createCategory,
-    getAllCategories,
-    deleteCategory
+    createCategory
 }
