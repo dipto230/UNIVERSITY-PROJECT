@@ -4,7 +4,15 @@ import { CategoryService } from "./category.service";
 import { catchAsync } from "../../shared/catchAsync";
 
 
- 
+interface IResponseData<T> { 
+    httpStatusCode: number;
+    success: boolean;
+    message: string;
+    data?: T;
+}
+const sendResponse = <T>(res: Response, responseData: IResponseData<T>) => {
+    const {httpS}
+} 
 
 
 

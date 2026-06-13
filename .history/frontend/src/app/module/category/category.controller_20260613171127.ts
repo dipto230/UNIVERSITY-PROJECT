@@ -4,7 +4,9 @@ import { CategoryService } from "./category.service";
 import { catchAsync } from "../../shared/catchAsync";
 
 
- 
+interface IResponseData<T> { 
+
+}
 
 
 
