@@ -16,7 +16,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
-  user          User?
+  
 
   @@unique([email])
   @@map("user")

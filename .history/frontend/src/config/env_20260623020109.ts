@@ -16,9 +16,7 @@ const loadEnvVariables = (): EnvConfig => {
         'BETTER_AUTH_URL'
     ]
     requiredEnvVariable.forEach((variable) => {
-        if (!process.env[variable]) {
-            throw new Error(`Environment variable ${variable} is required but not set in .env file `)
-        }
+        if()
     })
     return {
         NODE_ENV: process.env.NODE_ENV as string,

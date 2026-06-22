@@ -8,18 +8,7 @@ interface EnvConfig{
     BETTER_AUTH_URL: string;
 }
 const loadEnvVariables = (): EnvConfig => {
-    const requiredEnvVariable = [
-        'NODE_ENV',
-        'PORT',
-        'DATABASE_URL',
-        'BETTER_AUTH_SECRET',
-        'BETTER_AUTH_URL'
-    ]
-    requiredEnvVariable.forEach((variable) => {
-        if (!process.env[variable]) {
-            throw new Error(`Environment variable ${variable} is required but not set in .env file `)
-        }
-    })
+    const requiredEnv
     return {
         NODE_ENV: process.env.NODE_ENV as string,
         PORT: process.env.PORT as string,
