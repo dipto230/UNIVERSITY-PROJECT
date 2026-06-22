@@ -1,5 +1,6 @@
 enum Role {
-    USER
+    
+ CUSTOMER
     ADMIN
     SUPER_ADMIN
     VENDOR

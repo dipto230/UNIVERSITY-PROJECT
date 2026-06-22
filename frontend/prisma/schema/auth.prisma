@@ -6,7 +6,7 @@ model User {
   name          String
   email         String
   emailVerified Boolean   @default(false)
-  role          Role      @default(USER)
+  role          Role      @default(CUSTOMER)
   status        UserStatus @default(ACTIVE)
   needPasswordChange Boolean   @default(false)
   isDeleted     Boolean   @default(false)
@@ -16,7 +16,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   sessions      Session[]
   accounts      Account[]
-  user          User?
+  customer          Customer ?
 
   @@unique([email])
   @@map("user")

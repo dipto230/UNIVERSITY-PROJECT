@@ -1,5 +1,6 @@
 import { Role } from "../../../generated/prisma/client";
 import { auth } from "../../lib/auth";
+import { prisma } from "../../lib/prisma";
 
 interface IRegisterUserPayload{
     name: string;
@@ -14,13 +15,29 @@ const registerUser = async (payload: IRegisterUserPayload) => {
             name,
             email,
             password,
-            role: Role.USER
+            role: Role.CUSTOMER
         }
     })
     if (!data.user) {
         throw new Error("User registration failed");
     }
-    return data
+    const user = await prisma.$transaction(async (tx) => {
+       const customer = await tx.customer.create({
+           data: {
+               userId: data.user.id,
+               name: payload.name,
+               email: payload.email,
+               password:payload.password
+               
+                
+            }
+       })
+        return customer
+    })
+    return {
+        ...data,
+        user
+    }
 }
 
 export const AuthService = {

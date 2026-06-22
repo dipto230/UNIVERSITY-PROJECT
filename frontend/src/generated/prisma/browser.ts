@@ -42,3 +42,8 @@ export type Verification = Prisma.VerificationModel
  * 
  */
 export type Category = Prisma.CategoryModel
+/**
+ * Model Customer
+ * 
+ */
+export type Customer = Prisma.CustomerModel
